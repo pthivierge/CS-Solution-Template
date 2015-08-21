@@ -21,7 +21,7 @@ More explanations to come. Feel free to ask questions.
 
 #How to use the template solution: 
 
-+ The business code logic needs to be writtent in the Core dll.
++ The business code logic needs to be written in the Core dll.
 
 + Then use the command line and service code to write the code to call business code from the dll.
 
