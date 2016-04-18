@@ -3,20 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewApp.Service", "..\Service\NewApp.Service.csproj", "{1FBEA0AD-EA46-4053-A2D3-151BB5DB49F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewApp.Service", "AppService\NewApp.Service.csproj", "{1FBEA0AD-EA46-4053-A2D3-151BB5DB49F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewApp.CommandLine", "..\CommandLine\NewApp.CommandLine.csproj", "{C870F4C0-4EA7-430E-B3CB-2FBACF9804D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewApp.CommandLine", "AppCmdLine\NewApp.CommandLine.csproj", "{C870F4C0-4EA7-430E-B3CB-2FBACF9804D5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewApp.Settings.GUI", "..\ApplicationSettingsGUI\NewApp.Settings.GUI.csproj", "{98675C01-9466-4B55-971A-2DB1D89794E0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewApp.Settings.GUI", "AppSettingsGUI\NewApp.Settings.GUI.csproj", "{98675C01-9466-4B55-971A-2DB1D89794E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewApp.Settings", "..\ApplicationSettings\NewApp.Settings.csproj", "{B217D8F1-458A-4C3F-9614-080D520E7C0B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewApp.Settings", "AppSettings\NewApp.Settings.csproj", "{B217D8F1-458A-4C3F-9614-080D520E7C0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewApp.Core", "..\ApplicationCore\NewApp.Core.csproj", "{DE39BF39-C91D-4E1E-897F-A20E2AC7FE6E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewApp.Core", "AppCore\NewApp.Core.csproj", "{DE39BF39-C91D-4E1E-897F-A20E2AC7FE6E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{79CE80F2-E5FE-4393-BEB1-1657DA6F6893}"
 	ProjectSection(SolutionItems) = preProject
 		app.config = app.config
-		ReadMe.txt = ReadMe.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{FF9C9BB2-5B1B-4DFA-990D-8877B1F22A33}"
