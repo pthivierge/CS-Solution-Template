@@ -14,9 +14,10 @@ More explanations to come. Feel free to ask questions.
 - Open RenameProject.ps1 and CHANGE THE VARIABLES VALUES TO FIT YOUR NEED --> AKA: Company Name, Project/product long Name, Short name (used for namespaces), Service displayname and description, year.
 - Right click RenameProject.ps1, and select "Run with powershell"
 - Delete RenameProject.ps1
+- Delete the .git folder (otherwise you'll keep tracking changes of the original repo)
 
 
-- You will have to change Icons and look in the solution to keep what you need
+- You may want to change icons and look of the Settings GUI
 
 
 #How to use the template solution: 
