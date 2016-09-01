@@ -26,7 +26,7 @@ $SHORT_NAME="ACME"
 #
 
 # files excluded from the global search and replace
-$excluded = @('RenameProject.ps1','*.nupkg','*.nuspec', '*.exe', '*.dll', '*.pdb', '*.resx')
+$excluded = @('.git','.gitignore','*.ico','','.nuget','.vs','RenameProject.ps1','*.nupkg','*.nuspec', '*.exe', '*.dll', '*.pdb', '*.resx')
 
 $configFiles=get-childitem . -rec -exclude $excluded | Where-Object { !$_.PSIsContainer -and $_.fullname -notmatch 'package' }
 
@@ -39,9 +39,6 @@ foreach ($file in $configFiles)
     Set-Content $file.PSPath
     Rename-Item -Path $file.FullName -NewName ($file.Name -replace "NewApp",$SHORT_NAME)
 }
-
-
-$excluded = @('RenameProject.ps1','*.nupkg','*.nuspec', '*.exe', '*.dll', '*.pdb')
 
 # Rename file names:
 Get-ChildItem . -rec -exclude $excluded | Where-Object { !$_.PSIsContainer -and $_.fullname -notmatch 'package'} | Where-Object {$_.Name -like "*NewApp*"} | %{Rename-Item $_ -NewName ($_.Name -replace "NewApp",$SHORT_NAME)}
