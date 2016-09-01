@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewApp.Service", "AppService\NewApp.Service.csproj", "{1FBEA0AD-EA46-4053-A2D3-151BB5DB49F3}"
 EndProject
@@ -16,13 +16,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{79CE80F2-E5FE-4393-BEB1-1657DA6F6893}"
 	ProjectSection(SolutionItems) = preProject
 		app.config = app.config
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{FF9C9BB2-5B1B-4DFA-990D-8877B1F22A33}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
 Global
