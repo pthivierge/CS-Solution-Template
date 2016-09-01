@@ -4,10 +4,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewApp.Service", "AppService\NewApp.Service.csproj", "{1FBEA0AD-EA46-4053-A2D3-151BB5DB49F3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C870F4C0-4EA7-430E-B3CB-2FBACF9804D5} = {C870F4C0-4EA7-430E-B3CB-2FBACF9804D5}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewApp.CommandLine", "AppCmdLine\NewApp.CommandLine.csproj", "{C870F4C0-4EA7-430E-B3CB-2FBACF9804D5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewApp.Settings.GUI", "AppSettingsGUI\NewApp.Settings.GUI.csproj", "{98675C01-9466-4B55-971A-2DB1D89794E0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1FBEA0AD-EA46-4053-A2D3-151BB5DB49F3} = {1FBEA0AD-EA46-4053-A2D3-151BB5DB49F3}
+		{C870F4C0-4EA7-430E-B3CB-2FBACF9804D5} = {C870F4C0-4EA7-430E-B3CB-2FBACF9804D5}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewApp.Settings", "AppSettings\NewApp.Settings.csproj", "{B217D8F1-458A-4C3F-9614-080D520E7C0B}"
 EndProject
