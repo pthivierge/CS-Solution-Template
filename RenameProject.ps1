@@ -1,3 +1,4 @@
+$scriptPath = split-path -parent $MyInvocation.MyCommand.Definition
 #
 # SETTINGS TO CHANGE
 # Current values are examples.
@@ -28,7 +29,7 @@ $SHORT_NAME="ACME"
 # files excluded from the global search and replace
 $excluded = @('.git','.gitignore','*.ico','','.nuget','.vs','RenameProject.ps1','*.nupkg','*.nuspec', '*.exe', '*.dll', '*.pdb', '*.resx')
 
-$configFiles=get-childitem . -rec -exclude $excluded | Where-Object { !$_.PSIsContainer -and $_.fullname -notmatch 'package' }
+$configFiles=get-childitem $scriptPath -rec -exclude $excluded | Where-Object { !$_.PSIsContainer -and $_.fullname -notmatch 'package' }
 
 # rename text inside files
 foreach ($file in $configFiles)
@@ -41,7 +42,7 @@ foreach ($file in $configFiles)
 }
 
 # Rename file names:
-Get-ChildItem . -rec -exclude $excluded | Where-Object { !$_.PSIsContainer -and $_.fullname -notmatch 'package'} | Where-Object {$_.Name -like "*NewApp*"} | %{Rename-Item $_ -NewName ($_.Name -replace "NewApp",$SHORT_NAME)}
+Get-ChildItem $scriptPath -rec -exclude $excluded | Where-Object { !$_.PSIsContainer -and $_.fullname -notmatch 'package'} | Where-Object {$_.Name -like "*NewApp*"} | %{Rename-Item $_ -NewName ($_.Name -replace "NewApp",$SHORT_NAME)}
 
 
 Write-Host "Renaming Completed"
