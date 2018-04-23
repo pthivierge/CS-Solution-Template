@@ -31,7 +31,7 @@ namespace NewApp.Service.Scheduler
         #region Readonly & Static Fields
 
         private static readonly ILog Logger = LogManager.GetLogger(typeof (CronTask));
-        private readonly ISchedulerFactory schedFact = new StdSchedulerFactory();
+        private readonly ISchedulerFactory _factory = new StdSchedulerFactory();
 
         #endregion
 
@@ -46,7 +46,7 @@ namespace NewApp.Service.Scheduler
         public void AddTask(string taskName, string cronConfig, Action action)
         {
             // get a scheduler
-            _sched = schedFact.GetScheduler();
+            _sched = _factory.GetScheduler().Result;
 
             // construct job info
             var task = new CronTask(taskName, cronConfig, action);

@@ -17,6 +17,7 @@ using System;
 using System.IO;
 using CommandLine;
 using log4net;
+using NewApp.Core.Helpers;
 
 namespace NewApp.CommandLine
 {
@@ -36,25 +37,20 @@ namespace NewApp.CommandLine
             {
                 _logger.Info("Command Line Started"); // you could delete this line ... 
 
-                var options = new CommandLineOptions();
-
-                if (Parser.Default.ParseArguments(args, options))
-                {
-                    if (options.TestOption != null)
+                // build and configure command line parser instance
+                var parser = new Parser(with => with.EnableDashDash = true);
+                
+                parser.ParseArguments<CommandLineOptions>(args)
+                    .WithParsed(opts => RunOptions(opts))
+                    .WithNotParsed(errs =>
                     {
-                        // your code here
-                        Console.Write(options.TestOption);
-                    }
+                        // exit with error
+                        _logger.Error(errs);
+                        Environment.Exit(1);
+                    } );
 
+                Environment.Exit(0);
 
-                    // exit ok
-                    Environment.Exit(0);
-                }
-                else
-                {
-                    // exit with error
-                    Environment.Exit(1);
-                }
             }
 
 
@@ -62,6 +58,16 @@ namespace NewApp.CommandLine
             {
                 Console.SetOut(writer);
                 Console.WriteLine("Error: " + ex);
+            }
+        }
+
+        private static void RunOptions(CommandLineOptions opts)
+        {
+            if (opts.TestOption != null)
+            {
+                // your code here
+                Console.Write(opts.TestOption);
+
             }
         }
     }

@@ -14,6 +14,7 @@
 //  limitations under the License.
 #endregion
 using System;
+using System.Threading.Tasks;
 using log4net;
 using Quartz;
 
@@ -47,13 +48,14 @@ namespace NewApp.Service.Scheduler
             get { return _cronConfig; }
         }
 
-        public void Execute(IJobExecutionContext context)
+        public Task Execute(IJobExecutionContext context)
         {
             var task = (CronTask) context.MergedJobDataMap.Get("task");
 
             // executes the task 
             _logger.Info("Executing task : " + task.TaskName);
-            task._task();
+
+            return Task.Run(task._task);
         }
     }
 }

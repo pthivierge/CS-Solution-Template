@@ -13,14 +13,15 @@
 //  See the License for the specific language governing permissions and
 //  limitations under the License.
 #endregion
+
+using System.Collections.Generic;
 using CommandLine;
 using CommandLine.Text;
 
 namespace NewApp.CommandLine
 {
     /// <summary>
-    ///     see http://commandline.codeplex.com/
-    ///     see https://github.com/gsscoder/commandline/wiki
+    ///     see https://github.com/commandlineparser/commandline/wiki
     /// </summary>
     internal class CommandLineOptions
     {
@@ -35,11 +36,16 @@ namespace NewApp.CommandLine
         //public bool Verbose { get; set; }
 
 
-        [HelpOption]
-        public string GetUsage()
+
+        [Usage(ApplicationAlias = "NewApp")]
+        public static IEnumerable<Example> Examples
         {
-            return HelpText.AutoBuild(this,
-                (HelpText current) => HelpText.DefaultParsingErrorsHandler(this, current));
+            get
+            {
+                yield return new Example("Normal scenario", new CommandLineOptions { TestOption = "file.bin"});
+            }
+
         }
+
     }
 }
