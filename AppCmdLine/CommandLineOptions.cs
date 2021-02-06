@@ -25,8 +25,8 @@ namespace NewApp.CommandLine
     /// </summary>
     internal class CommandLineOptions
     {
-        [Option('t', "test", HelpText = "Pass a string to print to command line")]
-        public string TestOption { get; set; }
+        [Option('r', "run", HelpText = "Run the program with the specified file")]
+        public string RunOption { get; set; }
 
         // examples
         //[Option(null, "lenght", DefaultValue = -1, HelpText = "The maximum number of bytes to process.")]
@@ -42,7 +42,7 @@ namespace NewApp.CommandLine
         {
             get
             {
-                yield return new Example("Normal scenario", new CommandLineOptions { TestOption = "file.bin"});
+                yield return new Example("run with target file", new CommandLineOptions { RunOption = "file.csv"});
             }
 
         }

@@ -16,6 +16,7 @@
 using System;
 using System.IO;
 using CommandLine;
+using CommandLine.Text;
 using log4net;
 using NewApp.Core.Helpers;
 
@@ -28,47 +29,50 @@ namespace NewApp.CommandLine
     /// </summary>
     internal class Program
     {
+
+        static ILog _logger = LogManager.GetLogger(typeof(Program));
+
         private static void Main(string[] args)
         {
-            ILog _logger = LogManager.GetLogger(typeof (Program));
+           
             TextWriter writer = Console.Out;
-
+            
             try
             {
-                _logger.Info("Command Line Started"); // you could delete this line ... 
 
                 // build and configure command line parser instance
-                var parser = new Parser(with => with.EnableDashDash = true);
+                var parser = Parser.Default;
                 
-                parser.ParseArguments<CommandLineOptions>(args)
+                var parserResults = Parser.Default.ParseArguments<CommandLineOptions>(args)
                     .WithParsed(opts => RunOptions(opts))
                     .WithNotParsed(errs =>
                     {
-                        // exit with error
-                        _logger.Error(errs);
                         Environment.Exit(1);
-                    } );
+                    });
 
                 Environment.Exit(0);
-
             }
 
 
             catch (Exception ex)
             {
                 Console.SetOut(writer);
-                Console.WriteLine("Error: " + ex);
+                Console.WriteLine("Error: " + ex);                
             }
         }
 
         private static void RunOptions(CommandLineOptions opts)
         {
-            if (opts.TestOption != null)
+            if (opts.RunOption != null)
             {
+
+                _logger.Info("Command Line Started"); // you could delete this line ... 
+
                 // your code here
-                Console.Write(opts.TestOption);
+                Console.Write(opts.RunOption);
 
             }
         }
+
     }
 }
