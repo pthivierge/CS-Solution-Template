@@ -12,7 +12,7 @@ namespace NewApp.Settings {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0")]
     public sealed partial class Advanced : global::System.Configuration.ApplicationSettingsBase {
         
         private static Advanced defaultInstance = ((Advanced)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Advanced())));
