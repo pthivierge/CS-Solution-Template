@@ -63,15 +63,14 @@ namespace NewApp.CommandLine
 
         private static void RunOptions(CommandLineOptions opts)
         {
-            if (opts.RunOption != null)
-            {
 
                 _logger.Info("Command Line Started"); // you could delete this line ... 
 
                 // your code here
-                Console.Write(opts.RunOption);
+                Console.Write("Program running, press key to stop");
 
-            }
+                Console.ReadKey();
+
         }
 
     }
